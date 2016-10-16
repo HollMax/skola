@@ -1,1 +1,2 @@
-# skola
+# Seminář programování
+Max Hollmann
