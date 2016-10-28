@@ -12,7 +12,7 @@
     //$c = fakt(4);    
     //echo ("$c");
     $time = time();
-    $a = fakt(7);
+    $a = fakt(700);
     $b = gmp_fact(699);
     $c = $a / $b;
     //echo (time()-$time);
