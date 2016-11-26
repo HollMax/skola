@@ -1,0 +1,16 @@
+body{
+    background: #eee;
+}
+
+td, th{
+    border: solid 1px #222;
+    padding: 2px;
+}
+
+th{
+    color: #fff;
+    background: #025;
+}
+tr.dny{
+    background: #0ce;
+}
