@@ -3,8 +3,10 @@ body{
 }
 
 td, th{
+    color: #000;
     border: solid 1px #222;
     padding: 2px;
+    text-align: center;
 }
 
 th{
@@ -13,4 +15,8 @@ th{
 }
 tr.dny{
     background: #0ce;
+}
+td.lastnext{
+    color: #999;
+    
 }

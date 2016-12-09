@@ -13,12 +13,20 @@
             $year = date("Y");
             $count_days = date("t");
             $first = date("N",mktime(0, 0, 0, $month, 1, $year)) - 1;
+            echo ($year);
+            for (;$month > 12;){
+                $month -= 12;
+                $year ++;}
+            for (;$month < 1;){
+                $month += 12;
+                $year --;}
+            echo ($year);
         ?>
         <table>
         <tr>
-        <td><a href="<?php $link = "kalendar.php?month=".($month - 1);echo $link;?>">&lt</a></td>
+        <td><a href="<?php $link = "kalendar.php?month=".(/*($year - (date("n"))) * 12 + */$month - 1);echo $link;?>">&lt</a></td>
         <td colspan="5"><?php echo ($mesice[$month]." ".$year)?></td>
-        <td><a href="<?php $link = "kalendar.php?month=".($month + 1);echo $link;?>">&gt</a></td>
+        <td><a href="<?php $link = "kalendar.php?month=".(($year - (date("n"))) * 12 + $month + 1);echo $link;?>">&gt</a></td>
         </tr>
         <tr class="dny">
         <?php
@@ -27,8 +35,13 @@
             for ($last = 0; $last < $count_days; $last+=7){
                 echo ("<tr>");
                 for ($den = 0; $den < 7; $den++){
-                    echo ("<td>");
-                    if (($last + $den) >= $first && ($last + $den) <= $count_days) echo ($last + $den - $first + 1);
+                    if (($last + $den) >= $first && ($last + $den) <= $count_days){
+                        echo ("<td class='thismonth'>");
+                        echo ($last + $den - $first + 1);
+                        }
+                    else{
+                        echo ("<td>");
+                        }
                     echo ("</td>");
                     }
                 }
